@@ -1,5 +1,7 @@
 package dev.lenic.timetracking.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.*;
 
@@ -26,6 +28,7 @@ public class Timesheet extends DataAudit {
     private Project project;
 
     @OneToMany(mappedBy = "timesheet")
+    @JsonManagedReference
     private List<TimesheetEntry> entries;
 
     public Timesheet() {

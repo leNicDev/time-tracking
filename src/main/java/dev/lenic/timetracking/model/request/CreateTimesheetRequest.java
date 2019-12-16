@@ -1,12 +1,20 @@
 package dev.lenic.timetracking.model.request;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 public class CreateTimesheetRequest {
 
+    @NotEmpty
     private String title;
+    @NotNull
     private Date startDate;
+    @NotNull
     private Date endDate;
+    @NotNull
+    @Min(1)
     private Long projectId;
 
 

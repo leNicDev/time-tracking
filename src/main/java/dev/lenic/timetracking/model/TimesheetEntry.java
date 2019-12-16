@@ -1,5 +1,8 @@
 package dev.lenic.timetracking.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
@@ -24,6 +27,7 @@ public class TimesheetEntry extends DataAudit {
     private String description;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "timesheet_id")
+    @JsonBackReference
     private Timesheet timesheet;
 
 

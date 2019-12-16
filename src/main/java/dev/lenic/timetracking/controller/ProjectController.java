@@ -5,6 +5,7 @@ import dev.lenic.timetracking.model.request.CreateProjectRequest;
 import dev.lenic.timetracking.service.ProjectService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -23,7 +24,7 @@ public class ProjectController {
     }
 
     @PostMapping
-    public Project createProject(@RequestBody CreateProjectRequest request) {
+    public Project createProject(@RequestBody @Valid CreateProjectRequest request) {
         return projectService.createProject(request);
     }
 

@@ -1,8 +1,12 @@
 package dev.lenic.timetracking.model.request;
 
+import javax.validation.constraints.NotEmpty;
+
 public class CreateProjectRequest {
 
+    @NotEmpty
     private String projectNo;
+    @NotEmpty
     private String name;
     private String description;
 
